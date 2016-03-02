@@ -1,0 +1,16 @@
+<Panel ux:Class="Views.Home.Container">
+	
+	<PageControl>
+
+		<Page Background="#0fc">
+			<Text Value="{yo}"/>
+		</Page>
+		<Page Background="#c0f">
+
+		</Page>
+		<Page Background="#FFF17D">
+
+		</Page>
+
+	</PageControl>
+</Panel>

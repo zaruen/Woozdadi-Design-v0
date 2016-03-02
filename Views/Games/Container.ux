@@ -1,0 +1,11 @@
+<Panel ux:Class="Views.Games.Container">
+	<PageControl>
+		<Page Background="#FFD6D6">
+			
+		</Page>
+		<Page Background="#F8F7AD">
+			
+		</Page>
+	</PageControl>
+
+</Panel>

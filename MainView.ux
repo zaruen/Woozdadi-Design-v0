@@ -1,0 +1,103 @@
+<App Theme="Basic" Background="#eeeeeeff">
+	
+	<JavaScript File="main.js"/>
+	
+	    <DockPanel>
+	      <Grid ColumnCount="4" Dock="Bottom" Background="#FBAC7D">
+	      	<Style>
+	      		<Button ux:InheritStyle="false" ClipToBounds="False"
+				Margin="4,0,0,1" Background="#DC9053" Name="self">
+				<Fuse.BasicTheme.ButtonText TextColor="#FFF" Font="RobotoMedium" FontSize="12" Value="{Property self.Text}"
+					TextAlignment="Center"/>
+			</Button>
+	      	</Style>
+	        <Button Text="Home">
+	          <Clicked>
+	            <NavigateTo Target="_home" NavigationContext="_mainNavigation" />
+	          </Clicked>
+	        </Button>
+	        <Button Text="Games">
+	          <Clicked>
+	            <NavigateTo Target="_games" NavigationContext="_mainNavigation" />
+	          </Clicked>
+	        </Button>
+	        <Button Text="Paternity Tests">
+	          <Clicked>
+	            <NavigateTo Target="_paternityTests" NavigationContext="_mainNavigation" />
+	          </Clicked>
+	        </Button>
+	        <Button Text="Contenders">
+	          <Clicked>
+	            <NavigateTo Target="_contenders" NavigationContext="_mainNavigation" />
+	          </Clicked>
+	        </Button>
+	      </Grid>
+
+	       <DockPanel  Dock="Top" Background="#FBAC7D">
+	      		<Button Text="Menu" Dock="Left"/>
+	      		<Panel Dock="Fill">
+	      			<Text Value="{title}" Alignment="Center"/>
+	      		</Panel>
+	      		<Button Text="Settings" Dock="Right" Alignment="Center"/>
+	      </DockPanel>
+
+	      <Panel Dock="Fill">
+
+	        <LinearNavigation ux:Name="_mainNavigation" Easing="CubicInOut" />
+
+	        <Style>
+	          <PageControl ClipToBounds="true">
+	            <Style>
+	              <Text Alignment="Center" FontSize="30" />
+	            </Style>
+	            <EnteringAnimation>
+	              <Move Y="-1" RelativeTo="Size" />
+	            </EnteringAnimation>
+	            <ExitingAnimation>
+	              <Move Y="1" RelativeTo="Size" />
+	            </ExitingAnimation>
+	          </PageControl>
+	        </Style>
+
+	        <PageControl ux:Name="_home">
+              <Page Background="#0fc">
+              	<Text Value="{yo}"/>
+              </Page>
+              <Page Background="#c0f">
+               
+              </Page>
+              <Page Background="#FFF17D">
+              
+              </Page>
+              <Page Background="#08FFED">
+              
+      		  </Page>
+	        </PageControl>
+
+	        <PageControl ux:Name="_games">
+	          <Page Background="#888">
+	          
+	          </Page>
+	          <Page Background="#0cf">
+	           
+	          </Page>
+	          <Page Background="#06FF9C">
+	           
+	          </Page>
+	        </PageControl>
+
+	        <PageControl ux:Name="_paternityTests">
+	        	
+	       	</PageControl>
+
+	        <PageControl ux:Name="_contenders">
+	        	<Page Background="#888">
+	        		
+	        	</Page>
+	        </PageControl>
+
+	        
+	      </Panel>
+	    </DockPanel>
+</App>
+

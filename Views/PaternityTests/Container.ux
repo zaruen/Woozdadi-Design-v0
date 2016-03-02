@@ -1,0 +1,18 @@
+<Panel ux:Class="Views.PaternityTests.Container">
+	<PageControl>
+
+		<Page Background="#8FBCFF">
+			<Text Value="{yo}"/>
+		</Page>
+
+		<Page Background="#c1f">
+
+		</Page>
+
+		<Page Background="#FFF17D">
+
+		</Page>
+
+	</PageControl>
+
+</Panel>

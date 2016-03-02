@@ -1,0 +1,11 @@
+<Panel ux:Class="Views.Contenders.Container">
+	<PageControl>
+		<Page Background="#F8ADAD">
+			
+		</Page>
+		<Page Background="#F8F7AD">
+			
+		</Page>
+	</PageControl>
+</Panel>
+
