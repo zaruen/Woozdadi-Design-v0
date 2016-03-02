@@ -57,9 +57,47 @@
 	              <Move Y="1" RelativeTo="Size" />
 	            </ExitingAnimation>
 	          </PageControl>
+	          <Views.Games.Container ClipToBounds="true">
+	            <Style>
+	              <Text Alignment="Center" FontSize="30" />
+	            </Style>
+	            <EnteringAnimation>
+	              <Move Y="-1" RelativeTo="Size" />
+	            </EnteringAnimation>
+	            <ExitingAnimation>
+	              <Move Y="1" RelativeTo="Size" />
+	            </ExitingAnimation>
+	          </Views.Games.Container>
+	          <Views.Contenders.Container ClipToBounds="true">
+	            <Style>
+	              <Text Alignment="Center" FontSize="30" />
+	            </Style>
+	            <EnteringAnimation>
+	              <Move Y="-1" RelativeTo="Size" />
+	            </EnteringAnimation>
+	            <ExitingAnimation>
+	              <Move Y="1" RelativeTo="Size" />
+	            </ExitingAnimation>
+	          </Views.Contenders.Container>
+
+	          <Views.PaternityTests.Container ClipToBounds="true">
+	            <Style>
+	              <Text Alignment="Center" FontSize="30" />
+	            </Style>
+	            <EnteringAnimation>
+	              <Move Y="-1" RelativeTo="Size" />
+	            </EnteringAnimation>
+	            <ExitingAnimation>
+	              <Move Y="1" RelativeTo="Size" />
+	            </ExitingAnimation>
+	          </Views.PaternityTests.Container>
+
 	        </Style>
 
 	        <PageControl ux:Name="_home">
+	        	<WhileActive>
+	        		<Callback Handler="{setTitleHome}"/>
+	        	</WhileActive>
               <Page Background="#0fc">
               	<Text Value="{yo}"/>
               </Page>
@@ -74,27 +112,34 @@
       		  </Page>
 	        </PageControl>
 
-	        <PageControl ux:Name="_games">
-	          <Page Background="#888">
-	          
-	          </Page>
-	          <Page Background="#0cf">
-	           
-	          </Page>
-	          <Page Background="#06FF9C">
-	           
-	          </Page>
-	        </PageControl>
-
-	        <PageControl ux:Name="_paternityTests">
-	        	
-	       	</PageControl>
-
-	        <PageControl ux:Name="_contenders">
-	        	<Page Background="#888">
+	        <Views.Games.Container ux:Name="_games" > 
+	        		<WhileActive>
+	        			<Callback Handler="{setTitleGames}"/>
+	        		</WhileActive>
 	        		
-	        	</Page>
-	        </PageControl>
+	        </Views.Games.Container>
+
+	        <Views.PaternityTests.Container ux:Name="_paternityTests" > 
+	        		<WhileActive>
+	        			<Callback Handler="{setTitlePaternityTests}"/>
+	        		</WhileActive>
+	        		
+	        </Views.PaternityTests.Container>
+
+	       <!--  <PageControl ux:Name="_paternityTests" Background="#CCFF66">
+	        	<WhileActive>
+	        		<Callback Handler="{setTitlePaternityTests}"/>
+	        	</WhileActive>
+
+	        	
+	       	</PageControl> -->
+
+	        <Views.Contenders.Container ux:Name="_contenders" Background="#CCFF66">
+	        	<WhileActive>
+	        		<Callback Handler="{setTitleContenders}"/>
+	        	</WhileActive>
+	        	
+	        </Views.Contenders.Container>
 
 	        
 	      </Panel>

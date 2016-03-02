@@ -1,11 +1,57 @@
 <Panel ux:Class="Views.Contenders.Container">
-	<PageControl>
-		<Page Background="#F8ADAD">
-			
-		</Page>
-		<Page Background="#F8F7AD">
-			
-		</Page>
-	</PageControl>
+	<DockPanel>
+		<Style>
+			<Button ux:InheritStyle="false" ClipToBounds="False"
+				Margin="0,0,0,4" Background="#bdc3c7" Name="self">
+				<Fuse.BasicTheme.ButtonText TextColor="#FFF" Font="RobotoMedium" Value="{Property self.Text}"
+					TextAlignment="Center"/>
+			</Button>
+		</Style>
+		<StackPanel Dock="Top" Background="#bdc3c7">
+			<StatusBarBackground />
+			<iOS.StatusBarConfig Style="Light"/>
+			<MultiLayoutPanel Height="50" ux:Name="tabBar">
+				<GridLayout ColumnCount="2" Rows="1*"/>
+				<Panel ux:Name="myContendersTab">
+					<Placeholder>
+						<Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#6c7a89">
+							<LayoutAnimation>
+								<Move RelativeTo="LayoutChange" X="1" Duration="0.4" Easing="BackIn"/>
+							</LayoutAnimation>
+						</Rectangle>
+					</Placeholder>
+					<Button Text="My Contenders">
+						<Clicked>
+							<Set navigation.Active="_myContenders" />
+						</Clicked>
+					</Button>
+				</Panel>
+				<Panel ux:Name="searchContendersTab">
+					<Placeholder  Target="indicator"/>
+					<Button Text="Search New">
+						<Clicked>
+							<Set navigation.Active="_searchContenders" />
+						</Clicked>
+					</Button>
+				</Panel>
+			</MultiLayoutPanel>
+		</StackPanel>
+
+		<PageControl ux:Name="navigation">
+			<Page ux:Name="_myContenders" Background="#eee">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="myContendersTab" />
+				</WhileActive>
+				<Text>Welcome to Page 1</Text>
+			</Page>
+			<Page ux:Name="_searchContenders" Background="#abb7b7">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="searchContendersTab" />
+				</WhileActive>
+				<Text>Welcome to Page 2</Text>
+			</Page>
+		</PageControl>
+	</DockPanel>
 </Panel>
+
 

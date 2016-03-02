@@ -1,4 +1,4 @@
-<Panel ux:Class="Views.Games.Container">
+<Panel ux:Class="Navigation.MultiLayoutNav">
 	<DockPanel>
 		<Style>
 			<Button ux:InheritStyle="false" ClipToBounds="False"
@@ -12,7 +12,7 @@
 			<iOS.StatusBarConfig Style="Light"/>
 			<MultiLayoutPanel Height="50" ux:Name="tabBar">
 				<GridLayout ColumnCount="3" Rows="1*"/>
-				<Panel ux:Name="myGamesTab">
+				<Panel ux:Name="page1Tab">
 					<Placeholder>
 						<Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#6c7a89">
 							<LayoutAnimation>
@@ -20,25 +20,25 @@
 							</LayoutAnimation>
 						</Rectangle>
 					</Placeholder>
-					<Button Text="My Games">
+					<Button Text="Page 1">
 						<Clicked>
-							<Set navigation.Active="_myGames" />
+							<Set navigation.Active="page1" />
 						</Clicked>
 					</Button>
 				</Panel>
-				<Panel ux:Name="contendersGamesTab">
+				<Panel ux:Name="page2Tab">
 					<Placeholder  Target="indicator"/>
-					<Button Text="Contenders Games">
+					<Button Text="Page 2">
 						<Clicked>
-							<Set navigation.Active="_contendersGames" />
+							<Set navigation.Active="page2" />
 						</Clicked>
 					</Button>
 				</Panel>
-				<Panel ux:Name="recommendedGamesTab">
+				<Panel ux:Name="page3Tab">
 					<Placeholder Target="indicator"/>
-					<Button Text="Recommended Games">
+					<Button Text="Page 3">
 						<Clicked>
-							<Set navigation.Active="_recommendedGames" />
+							<Set navigation.Active="page3" />
 						</Clicked>
 					</Button>
 				</Panel>
@@ -46,23 +46,23 @@
 		</StackPanel>
 
 		<PageControl ux:Name="navigation">
-			<Page ux:Name="_myGames" Background="#eee">
+			<Page ux:Name="page1" Background="#eee">
 				<WhileActive Threshold="0.5">
-					<Set tabBar.LayoutElement="myGamesTab" />
+					<Set tabBar.LayoutElement="page1Tab" />
 				</WhileActive>
-				<Text>My Games</Text>
+				<Text>Welcome to Page 1</Text>
 			</Page>
-			<Page ux:Name="_contendersGames" Background="#abb7b7">
+			<Page ux:Name="page2" Background="#abb7b7">
 				<WhileActive Threshold="0.5">
-					<Set tabBar.LayoutElement="contendersGamesTab" />
+					<Set tabBar.LayoutElement="page2Tab" />
 				</WhileActive>
-				<Text>Contenders Games</Text>
+				<Text>Welcome to Page 2</Text>
 			</Page>
-			<Page ux:Name="_recommendedGames" Background="#f2f1ef">
+			<Page ux:Name="page3" Background="#f2f1ef">
 				<WhileActive Threshold="0.5">
-					<Set tabBar.LayoutElement="recommendedGamesTab" />
+					<Set tabBar.LayoutElement="page3Tab" />
 				</WhileActive>
-				<Text>Recommended Games or New Games</Text>
+				<Text>Welcome to Page 3</Text>
 			</Page>
 		</PageControl>
 	</DockPanel>

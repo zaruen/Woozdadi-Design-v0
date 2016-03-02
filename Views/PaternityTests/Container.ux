@@ -1,18 +1,70 @@
 <Panel ux:Class="Views.PaternityTests.Container">
-	<PageControl>
+	<DockPanel>
+		<Style>
+			<Button ux:InheritStyle="false" ClipToBounds="False"
+				Margin="0,0,0,4" Background="#bdc3c7" Name="self">
+				<Fuse.BasicTheme.ButtonText TextColor="#FFF" Font="RobotoMedium" Value="{Property self.Text}"
+					TextAlignment="Center"/>
+			</Button>
+		</Style>
+		<StackPanel Dock="Top" Background="#bdc3c7">
+			<StatusBarBackground />
+			<iOS.StatusBarConfig Style="Light"/>
+			<MultiLayoutPanel Height="50" ux:Name="tabBar">
+				<GridLayout ColumnCount="3" Rows="1*"/>
+				<Panel ux:Name="myPatTestsTab">
+					<Placeholder>
+						<Rectangle ux:Name="indicator" Alignment="Bottom" Height="4" Fill="#6c7a89">
+							<LayoutAnimation>
+								<Move RelativeTo="LayoutChange" X="1" Duration="0.4" Easing="BackIn"/>
+							</LayoutAnimation>
+						</Rectangle>
+					</Placeholder>
+					<Button Text="My Paternity Tests">
+						<Clicked>
+							<Set navigation.Active="_myPatTests" />
+						</Clicked>
+					</Button>
+				</Panel>
+				<Panel ux:Name="newPatTestTab">
+					<Placeholder  Target="indicator"/>
+					<Button Text="Contenders Games">
+						<Clicked>
+							<Set navigation.Active="_newPatTest" />
+						</Clicked>
+					</Button>
+				</Panel>
+				<Panel ux:Name="recommendedPatTestsTab">
+					<Placeholder Target="indicator"/>
+					<Button Text="Recommended Paternity Tests">
+						<Clicked>
+							<Set navigation.Active="_recommendedPatTests" />
+						</Clicked>
+					</Button>
+				</Panel>
+			</MultiLayoutPanel>
+		</StackPanel>
 
-		<Page Background="#8FBCFF">
-			<Text Value="{yo}"/>
-		</Page>
-
-		<Page Background="#c1f">
-
-		</Page>
-
-		<Page Background="#FFF17D">
-
-		</Page>
-
-	</PageControl>
-
+		<PageControl ux:Name="navigation">
+			<Page ux:Name="_myPatTests" Background="#eee">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="myPatTestsTab" />
+				</WhileActive>
+				<Text>My PT</Text>
+			</Page>
+			<Page ux:Name="_newPatTest" Background="#abb7b7">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="newPatTestTab" />
+				</WhileActive>
+				<Text>New PT</Text>
+			</Page>
+			<Page ux:Name="_recommendedPatTests" Background="#f2f1ef">
+				<WhileActive Threshold="0.5">
+					<Set tabBar.LayoutElement="recommendedPatTestsTab" />
+				</WhileActive>
+				<Text>Recommended PT</Text>
+			</Page>
+		</PageControl>
+	</DockPanel>
 </Panel>
+
