@@ -1,4 +1,4 @@
-<Panel ux:Class="Views.Contenders.Container">
+<Views.Container ux:Class="Views.Contenders.Container">
 	<DockPanel>
 		<Style>
 			<Button ux:InheritStyle="false" ClipToBounds="False"
@@ -52,6 +52,6 @@
 			</Page>
 		</PageControl>
 	</DockPanel>
-</Panel>
+</Views.Container>
 
 

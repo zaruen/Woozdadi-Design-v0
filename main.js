@@ -1,5 +1,7 @@
 var Observable = require('FuseJS/Observable');
 
+var dataManager = require('DataManager');
+
 var yo = Observable('Yo');
 var title = Observable('Home');
 
@@ -26,5 +28,6 @@ module.exports = {
 	setTitleHome : setTitleHome,
 	setTitleGames : setTitleGames,
 	setTitlePaternityTests : setTitlePaternityTests,
-	setTitleContenders : setTitleContenders
+	setTitleContenders : setTitleContenders,
+	dataManager : dataManager
 };

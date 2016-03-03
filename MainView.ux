@@ -1,5 +1,6 @@
 <App Theme="Basic" Background="#eeeeeeff">
 	
+	<JavaScript File="Data/DataManager.js" ux:Global="DataManager"/>
 	<JavaScript File="main.js"/>
 	
 	    <DockPanel>
@@ -45,72 +46,13 @@
 
 	        <LinearNavigation ux:Name="_mainNavigation" Easing="CubicInOut" />
 
-	        <Style>
-	          <PageControl ClipToBounds="true">
-	            <Style>
-	              <Text Alignment="Center" FontSize="30" />
-	            </Style>
-	            <EnteringAnimation>
-	              <Move Y="-1" RelativeTo="Size" />
-	            </EnteringAnimation>
-	            <ExitingAnimation>
-	              <Move Y="1" RelativeTo="Size" />
-	            </ExitingAnimation>
-	          </PageControl>
-	          <Views.Games.Container ClipToBounds="true">
-	            <Style>
-	              <Text Alignment="Center" FontSize="30" />
-	            </Style>
-	            <EnteringAnimation>
-	              <Move Y="-1" RelativeTo="Size" />
-	            </EnteringAnimation>
-	            <ExitingAnimation>
-	              <Move Y="1" RelativeTo="Size" />
-	            </ExitingAnimation>
-	          </Views.Games.Container>
-	          <Views.Contenders.Container ClipToBounds="true">
-	            <Style>
-	              <Text Alignment="Center" FontSize="30" />
-	            </Style>
-	            <EnteringAnimation>
-	              <Move Y="-1" RelativeTo="Size" />
-	            </EnteringAnimation>
-	            <ExitingAnimation>
-	              <Move Y="1" RelativeTo="Size" />
-	            </ExitingAnimation>
-	          </Views.Contenders.Container>
+			<Style.NavigationStyle />
 
-	          <Views.PaternityTests.Container ClipToBounds="true">
-	            <Style>
-	              <Text Alignment="Center" FontSize="30" />
-	            </Style>
-	            <EnteringAnimation>
-	              <Move Y="-1" RelativeTo="Size" />
-	            </EnteringAnimation>
-	            <ExitingAnimation>
-	              <Move Y="1" RelativeTo="Size" />
-	            </ExitingAnimation>
-	          </Views.PaternityTests.Container>
-
-	        </Style>
-
-	        <PageControl ux:Name="_home">
-	        	<WhileActive>
-	        		<Callback Handler="{setTitleHome}"/>
-	        	</WhileActive>
-              <Page Background="#0fc">
-              	<Text Value="{yo}"/>
-              </Page>
-              <Page Background="#c0f">
-               
-              </Page>
-              <Page Background="#FFF17D">
-              
-              </Page>
-              <Page Background="#08FFED">
-              
-      		  </Page>
-	        </PageControl>
+	         <Views.Home.Container ux:Name="_home" > 
+	        		<WhileActive>
+	        			<Callback Handler="{setTitleHome}"/>
+	        		</WhileActive>
+	        </Views.Home.Container>
 
 	        <Views.Games.Container ux:Name="_games" > 
 	        		<WhileActive>
@@ -126,13 +68,6 @@
 	        		
 	        </Views.PaternityTests.Container>
 
-	       <!--  <PageControl ux:Name="_paternityTests" Background="#CCFF66">
-	        	<WhileActive>
-	        		<Callback Handler="{setTitlePaternityTests}"/>
-	        	</WhileActive>
-
-	        	
-	       	</PageControl> -->
 
 	        <Views.Contenders.Container ux:Name="_contenders" Background="#CCFF66">
 	        	<WhileActive>

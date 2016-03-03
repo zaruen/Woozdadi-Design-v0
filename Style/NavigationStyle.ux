@@ -1,0 +1,59 @@
+<Style ux:Class="Style.NavigationStyle">
+	<PageControl ClipToBounds="true">
+	  <Style>
+	    <Text Alignment="Center" FontSize="30" />
+	  </Style>
+	  <EnteringAnimation>
+	    <Move Y="-1" RelativeTo="Size" />
+	  </EnteringAnimation>
+	  <ExitingAnimation>
+	    <Move Y="1" RelativeTo="Size" />
+	  </ExitingAnimation>
+	</PageControl>
+	<Views.Games.Container ClipToBounds="true">
+	  <Style>
+	    <Text Alignment="Center" FontSize="30" />
+	  </Style>
+	  <EnteringAnimation>
+	    <Move Y="-1" RelativeTo="Size" />
+	  </EnteringAnimation>
+	  <ExitingAnimation>
+	    <Move Y="1" RelativeTo="Size" />
+	  </ExitingAnimation>
+	</Views.Games.Container>
+	<Views.Contenders.Container ClipToBounds="true">
+	  <Style>
+	    <Text Alignment="Center" FontSize="30" />
+	  </Style>
+	  <EnteringAnimation>
+	    <Move Y="-1" RelativeTo="Size" />
+	  </EnteringAnimation>
+	  <ExitingAnimation>
+	    <Move Y="1" RelativeTo="Size" />
+	  </ExitingAnimation>
+	</Views.Contenders.Container>
+
+	<Views.PaternityTests.Container ClipToBounds="true">
+	  <Style>
+	    <Text Alignment="Center" FontSize="30" />
+	  </Style>
+	  <EnteringAnimation>
+	    <Move Y="-1" RelativeTo="Size" />
+	  </EnteringAnimation>
+	  <ExitingAnimation>
+	    <Move Y="1" RelativeTo="Size" />
+	  </ExitingAnimation>
+	</Views.PaternityTests.Container>
+
+	<Views.Home.Container ClipToBounds="true">
+	  <Style>
+	    <Text Alignment="Center" FontSize="30" />
+	  </Style>
+	  <EnteringAnimation>
+	    <Move Y="-1" RelativeTo="Size" />
+	  </EnteringAnimation>
+	  <ExitingAnimation>
+	    <Move Y="1" RelativeTo="Size" />
+	  </ExitingAnimation>
+	</Views.Home.Container>
+</Style>

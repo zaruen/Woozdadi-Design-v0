@@ -1,0 +1,49 @@
+<Panel ux:Class="Views.Games.GamesList">
+
+	<Font File="../../Assets/Fonts/RobotoCondensed-Bold.ttf" ux:Global="Bold" />
+	<Font File="../../Assets/Fonts/RobotoCondensed-Regular.ttf" ux:Global="Regular" />
+	<Font File="../../Assets/Fonts/RobotoCondensed-Light.ttf" ux:Global="Light" />
+
+	<FileImageSource ux:Key="contact1" File="../../Assets/Contacts/Contact1.png" />
+	<FileImageSource ux:Key="contact2" File="../../Assets/Contacts/Contact2.png" />
+	<FileImageSource ux:Key="contact3" File="../../Assets/Contacts/Contact3.png" />
+	<FileImageSource ux:Key="contact4" File="../../Assets/Contacts/Contact4.png" />
+
+	<FileImageSource ux:Key="gameicon1" File="../../Assets/GameIcon/doodle-jump.jpg" />
+	<FileImageSource ux:Key="gameicon2" File="../../Assets/GameIcon/subway-surfer.jpg" />
+	<FileImageSource ux:Key="gameicon3" File="../../Assets/GameIcon/flappy-bird.png" />
+	<FileImageSource ux:Key="gameicon4" File="../../Assets/GameIcon/flick-kick.jpg" />
+
+	<ScrollView>
+		<StackPanel Background="#F8DADA">
+			<Each Items="{dataManager.myGamesList}">
+				<DockPanel Margin="1,1,1,0" Background="#fff">
+					<Circle Height="50" Width="50" Dock="Left" Margin="7,7,0,7" Alignment="TopLeft">
+						<ImageFill Source="{DataToResource icon}" />
+					</Circle>
+				
+					<StackPanel Margin="7,3,7,7" Dock="Fill">
+						<Text Font="Regular" Value="{title}" FontSize="16" />
+						<Text Font="Regular" Value="{score}" FontSize="16" TextColor="#999" />
+						<Text TextWrapping="Wrap" Font="Light" Value="{contenders}" FontSize="14" TextColor="#000" />
+
+					</StackPanel>
+					<StackPanel Dock="Right" Alignment="Center" Margin="0,0,7,0">
+						<Style>
+							<Text FontSize="10" />
+						</Style>
+						<Match Value="{isDaddy}">
+							<Case Bool="true">
+								<Text TextColor="#FF6778" Value="WoozDadi !" />
+							</Case>
+							<Case Bool="false">
+								<Text TextColor="#93A29D" Value="Will" />
+								<Text TextColor="#93A29D" Value="is your Daddy" />
+							</Case>
+						</Match>
+					</StackPanel>
+				</DockPanel>
+			</Each>
+		</StackPanel>
+	</ScrollView>
+</Panel>
